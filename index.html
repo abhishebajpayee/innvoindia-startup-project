@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>InnvoIndia — Innovation Ecosystem</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:#f5f7fb;color:#172033}
+:root{--p:#315bea;--dark:#101a35;--muted:#6b7589;--line:#e5e9f1;--green:#159669;--amber:#d58a00}
+button,input,select,textarea{font:inherit}button{cursor:pointer}.hidden{display:none!important}
+.nav{height:70px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 6%;position:sticky;top:0;z-index:5}
+.logo{font-size:23px;font-weight:900;color:var(--p)}.logo span{color:#172033}.links{display:flex;gap:25px}.links a{font-size:14px;color:#647087;text-decoration:none}
+.btn{padding:11px 17px;border-radius:10px;border:1px solid transparent;font-weight:750}.primary{background:var(--p);color:#fff}.outline{background:#fff;border-color:#ccd5ef;color:var(--p)}.danger{background:#fff0f0;color:#c53b3b;border-color:#ffd0d0}
+.hero{padding:78px 8%;display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:center;background:linear-gradient(135deg,#f3f6ff,#fff)}
+.badge{font-size:12px;font-weight:800;color:var(--p);background:#eaf0ff;padding:7px 12px;border-radius:30px}.hero h1{font-size:55px;line-height:1.05;margin:18px 0}.hero p{font-size:18px;color:var(--muted);line-height:1.7;max-width:650px}.actions{display:flex;gap:12px;margin-top:25px}
+.mock{background:var(--dark);border-radius:24px;padding:25px;color:#fff;box-shadow:0 25px 60px #17285c25}.mocktop{display:flex;justify-content:space-between;color:#cbd4ef;font-size:13px}.big{background:#1b2748;border-radius:15px;padding:22px;margin-top:25px}.big b{font-size:36px}.smallgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}.smallgrid div{background:#1b2748;padding:15px;border-radius:14px}.section{padding:65px 8%}.section h2{font-size:34px;margin:0 0 8px}.muted{color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:30px}.card,.panel,.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:21px;box-shadow:0 8px 25px #17284d08}.icon{width:42px;height:42px;border-radius:12px;background:#edf2ff;color:var(--p);display:grid;place-items:center;font-weight:900}.card h3{margin:14px 0 8px}.card p{font-size:14px;line-height:1.6;color:var(--muted)}
+.loginwrap{min-height:calc(100vh - 70px);display:grid;place-items:center;padding:30px}.loginbox{width:min(470px,100%);background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px;box-shadow:0 20px 55px #15234b14}.roles{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:20px 0}.role{padding:12px;border:1px solid #dce2ed;background:#fff;border-radius:10px;font-size:13px}.role.sel{border-color:var(--p);background:#edf2ff;color:var(--p);font-weight:800}.form label{display:block;font-size:13px;font-weight:750;margin:14px 0 6px}.form input,.form select,.form textarea{width:100%;padding:12px;border:1px solid #d8deea;border-radius:9px}.form textarea{min-height:105px}
+.app{display:grid;grid-template-columns:240px 1fr;min-height:calc(100vh - 70px)}.side{background:var(--dark);color:#cbd4e9;padding:22px 15px}.side h3{color:#fff;margin:4px 10px 22px}.side .rolelabel{margin:0 10px 15px;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#8490ae}.side a{display:block;padding:12px 13px;margin:3px 0;border-radius:9px;text-decoration:none;color:#b8c2db;font-size:14px}.side a:hover,.side a.active{background:#27345a;color:#fff}.main{padding:30px 4%;overflow:auto}.head{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}.head h2{margin:0}.tag{display:inline-block;padding:5px 9px;border-radius:20px;background:#edf2ff;color:var(--p);font-size:11px;font-weight:750}.tag.green{background:#e8f8f1;color:#117e58}.tag.amber{background:#fff4df;color:#a96800}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.stat small{color:var(--muted)}.stat b{display:block;font-size:30px;margin-top:8px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.panel{margin-top:20px}.panel h3{margin-top:0}.table{width:100%;border-collapse:collapse}.table th,.table td{text-align:left;padding:13px;border-bottom:1px solid #edf0f5;font-size:13px}.timeline{border-left:2px solid #dce3f5;padding-left:20px}.step{margin:0 0 20px}.step b{display:block}.notice{padding:14px;background:#f1f5ff;border-radius:10px;color:#45536f;font-size:13px;margin:12px 0}.toast{display:none;position:fixed;right:20px;bottom:20px;background:var(--dark);color:#fff;padding:13px 18px;border-radius:10px;z-index:20}
+.tabs{display:flex;gap:8px;margin-bottom:18px}.tabbtn{flex:1;padding:10px;border:1px solid #dce2ed;background:#fff;border-radius:9px;font-weight:750;color:#647087}.tabbtn.sel{background:var(--p);color:#fff;border-color:var(--p)}
+.progress{display:flex;gap:6px;margin-bottom:20px}.progress span{flex:1;height:5px;border-radius:3px;background:#e5e9f1}.progress span.done{background:var(--p)}
+.stepnav{display:flex;gap:10px;margin-top:18px}.stepnav .btn{flex:1}
+.scale{display:flex;gap:8px;margin-bottom:4px}.scale button{flex:1;padding:10px;border:1px solid #d8deea;border-radius:9px;background:#fff;font-weight:750}.scale button.sel{background:var(--p);border-color:var(--p);color:#fff}
+.hint{font-size:12px;color:#8993a7;margin-top:14px}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.cards,.stats,.grid{grid-template-columns:1fr 1fr}.links{display:none}.app{grid-template-columns:1fr}.side{display:none}}
+@media(max-width:600px){.cards,.stats,.grid{grid-template-columns:1fr}.hero h1{font-size:40px}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="logo">Innvo<span>India</span></div><div class="links"><a href="#features">Platform</a><a href="#workflow">Workflows</a><a href="#about">About</a></div><div><button class="btn outline" onclick="openLogin()">Login</button> <button class="btn primary" onclick="openLogin()">Get Started</button></div></nav>
+
+<section id="landing">
+<div class="hero"><div><span class="badge">INDIA'S INNOVATION ECOSYSTEM</span><h1>Connect problems with <span style="color:#315bea">solutions.</span></h1><p>InnvoIndia gives startups and organizations separate workflows to discover challenges, publish problems, submit solutions, evaluate applications and build innovation opportunities.</p><div class="actions"><button class="btn primary" onclick="openLogin()">Enter Platform →</button><button class="btn outline" onclick="document.getElementById('workflow').scrollIntoView()">See Workflows</button></div></div>
+<div class="mock"><div class="mocktop"><b>Platform Overview</b><span>LIVE</span></div><div class="big"><small>Active Challenges</small><br><b>248</b></div><div class="smallgrid"><div><small>Startups</small><br><b>1,284</b></div><div><small>Organizations</small><br><b>186</b></div></div></div></div>
+<section class="section" id="features"><h2>Built around separate roles</h2><p class="muted">Each role gets only the tools and actions needed for its workflow.</p><div class="cards">
+<div class="card"><div class="icon">S</div><h3>Startup Portal</h3><p>Discover challenges, apply, submit solutions, track evaluation and explore funding.</p></div>
+<div class="card"><div class="icon">O</div><h3>Organization Portal</h3><p>Post challenges, receive submissions, evaluate startups, shortlist and select solutions.</p></div>
+<div class="card"><div class="icon">V</div><h3>Guided Onboarding</h3><p>Registration, optional experience feedback and verification before either role enters its workspace.</p></div>
+<div class="card"><div class="icon">D</div><h3>Deadline Engine</h3><p>Role-specific deadlines, application status and workflow notifications.</p></div>
+</div></section>
+<section class="section" id="workflow" style="background:#fff"><h2>Two role-specific workflows</h2><div class="cards" style="grid-template-columns:repeat(3,1fr)">
+<div class="card"><h3>Startup</h3><p><b>Register → Feedback (optional) → Verify → Profile → Discover → Apply → Submit → Evaluation → Selection → Funding/Innovation History</b></p></div>
+<div class="card"><h3>Organization</h3><p><b>Register → Verify → Profile → Create Challenge → Publish → Receive → Review → Shortlist/Evaluate → Select Startup</b></p></div>
+<div class="card"><h3>Platform</h3><p><b>Challenge creation and startup submission are connected, but permissions remain role-specific.</b></p></div>
+</div></section>
+<section class="section" id="about"><h2>InnvoIndia</h2><p class="muted">A prototype for connecting Indian innovation challenges with startups and organizations through structured digital workflows.</p></section>
+</section>
+
+<section id="login" class="hidden"><div class="loginwrap"><div class="loginbox">
+
+<div class="tabs"><button class="tabbtn sel" id="tab-login" onclick="switchTab('login')">Login</button><button class="tabbtn" id="tab-register" onclick="switchTab('register')">Register</button></div>
+
+<div id="view-login">
+<h2>Welcome back</h2><p class="muted">Choose the portal you want to use.</p>
+<div class="roles"><button class="role sel" data-role="startup" onclick="selectRole(this)">Startup</button><button class="role" data-role="org" onclick="selectRole(this)">Organization</button></div>
+<div class="form"><label>Email</label><input id="email" placeholder="you@example.com"><label>Password</label><input id="pass" type="password" placeholder="••••••••"><button class="btn primary" style="width:100%;margin-top:18px" onclick="login()">Enter Portal →</button></div>
+<p class="hint">Prototype mode: any credentials work.</p>
+</div>
+
+<div id="view-register" class="hidden">
+<div class="progress" id="regProgress"></div>
+
+<div class="regstep" id="rs-role">
+<h2>Create your account</h2><p class="muted">Choose the portal you're registering for.</p>
+<div class="roles"><button class="role sel" data-role="startup" onclick="selectRole(this,'register')">Startup</button><button class="role" data-role="org" onclick="selectRole(this,'register')">Organization</button></div>
+<button class="btn primary" style="width:100%;margin-top:18px" onclick="goStep('account')">Continue →</button>
+</div>
+
+<div class="regstep hidden" id="rs-account">
+<h2>Registration details</h2><p class="muted">Basic account information.</p>
+<div class="form"><label>Full name / Organization name</label><input id="regName" placeholder="Enter name"><label>Email</label><input id="regEmail" placeholder="you@example.com"><label>Password</label><input id="regPass" type="password" placeholder="••••••••"></div>
+<div class="stepnav"><button class="btn outline" onclick="goStep('role')">← Back</button><button class="btn primary" onclick="afterAccount()">Continue →</button></div>
+</div>
+
+<div class="regstep hidden" id="rs-feedback">
+<h2>Registration Experience</h2><p class="muted">Optional — this step can be skipped.</p>
+<div class="form">
+<label>How easy was registration? (1 = hard, 5 = easy)</label>
+<div class="scale" id="easeScale"></div>
+<label>Difficulty faced</label><textarea id="fbDifficulty" placeholder="e.g. unclear fields, too many steps..."></textarea>
+<label>Improvement suggestions</label><textarea id="fbImprove" placeholder="What should be improved?"></textarea>
+<label>Additional suggestions</label><textarea id="fbExtra" placeholder="Anything else to share"></textarea>
+</div>
+<div class="stepnav"><button class="btn outline" onclick="skipFeedback()">Skip</button><button class="btn primary" onclick="submitFeedback()">Submit Feedback →</button></div>
+</div>
+
+<div class="regstep hidden" id="rs-verify">
+<h2>Verification</h2><p class="muted">Simulated OTP / document verification. Real OTP can be connected later.</p>
+<div class="notice" id="verifyStatus">⏳ Verification pending</div>
+<div class="stepnav"><button class="btn primary" style="width:100%" onclick="simulateVerify()">Simulate Verification →</button></div>
+</div>
+
+<div class="regstep hidden" id="rs-profile">
+<h2>Complete your profile</h2><p class="muted">So the other side can understand your capabilities.</p>
+<div class="form" id="regProfileForm"></div>
+<div class="stepnav"><button class="btn primary" style="width:100%" onclick="finishRegistration()">Finish & Enter Portal →</button></div>
+</div>
+
+</div>
+</div></div></section>
+
+<section id="portal" class="hidden"><div class="app"><aside class="side"><h3>InnvoIndia</h3><div class="rolelabel" id="roleLabel"></div><div id="menu"></div><a onclick="logout()">← Logout</a></aside><main class="main" id="content"></main></div></section>
+<div id="toast" class="toast"></div>
+
+<script>
+let current='startup';
+const menus={
+startup:[['dashboard','Dashboard'],['discover','Discover Challenges'],['applications','My Applications'],['deadlines','Deadlines'],['history','Funding & Innovation History'],['profile','My Profile']],
+org:[['dashboard','Dashboard'],['create','Create Challenge'],['challenges','My Challenges'],['applications','Applications Received'],['evaluation','Evaluation & Shortlist'],['selected','Selected Startups'],['profile','Organization Profile']]
+};
+let regRole='startup',regEase=0;
+const regOrder=['role','account','feedback','verify','profile'];
+function openLogin(){document.getElementById('landing').classList.add('hidden');document.getElementById('login').classList.remove('hidden');switchTab('login')}
+function switchTab(t){document.getElementById('tab-login').classList.toggle('sel',t==='login');document.getElementById('tab-register').classList.toggle('sel',t==='register');document.getElementById('view-login').classList.toggle('hidden',t!=='login');document.getElementById('view-register').classList.toggle('hidden',t!=='register');if(t==='register')goStep('role')}
+function selectRole(x,ctx){let scope=x.closest(ctx==='register'?'#view-register':'#view-login');scope.querySelectorAll('.role').forEach(b=>b.classList.remove('sel'));x.classList.add('sel');if(ctx==='register')regRole=x.dataset.role;else current=x.dataset.role}
+function goStep(name){regOrder.forEach(s=>document.getElementById('rs-'+s).classList.add('hidden'));document.getElementById('rs-'+name).classList.remove('hidden');document.getElementById('regProgress').innerHTML=regOrder.map(s=>`<span class="${regOrder.indexOf(s)<=regOrder.indexOf(name)?'done':''}"></span>`).join('')}
+function afterAccount(){if(regRole==='startup'){buildEaseScale();goStep('feedback')}else{goStep('verify')}}
+function buildEaseScale(){regEase=0;document.getElementById('easeScale').innerHTML=[1,2,3,4,5].map(n=>`<button type="button" onclick="pickEase(this,${n})">${n}</button>`).join('')}
+function pickEase(btn,n){regEase=n;btn.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('sel'));btn.classList.add('sel')}
+function skipFeedback(){toast('Feedback skipped');goStep('verify')}
+function submitFeedback(){toast('Thanks for your feedback ('+(regEase||'n/a')+'/5)');goStep('verify')}
+function simulateVerify(){document.getElementById('verifyStatus').innerHTML='✅ Verified successfully';buildProfileForm();setTimeout(()=>goStep('profile'),500)}
+function buildProfileForm(){document.getElementById('regProfileForm').innerHTML=formProfile(regRole==='startup'?'Startup':'Organization')}
+function finishRegistration(){toast('Registration complete — welcome to InnvoIndia!');current=regRole;document.getElementById('login').classList.add('hidden');document.getElementById('portal').classList.remove('hidden');buildMenu();go('dashboard')}
+function login(){document.getElementById('login').classList.add('hidden');document.getElementById('portal').classList.remove('hidden');buildMenu();go('dashboard')}
+function logout(){document.getElementById('portal').classList.add('hidden');document.getElementById('landing').classList.remove('hidden')}
+function buildMenu(){let names={startup:'Startup Portal',org:'Organization Portal'};document.getElementById('roleLabel').textContent=names[current];document.getElementById('menu').innerHTML=menus[current].map((x,i)=>`<a id="m-${x[0]}" onclick="go('${x[0]}')">${x[1]}</a>`).join('')}
+function go(p){document.querySelectorAll('.side a').forEach(a=>a.classList.remove('active'));let el=document.getElementById('m-'+p);if(el)el.classList.add('active');let c=document.getElementById('content');let H=(t,s)=>`<div class="head"><div><h2>${t}</h2><div class="muted" style="font-size:14px;margin-top:5px">${s}</div></div><span class="tag">${current==='startup'?'Startup':'Organization'} Portal</span></div>`;
+if(current==='startup')startup(c,p,H);else if(current==='org')org(c,p,H);}
+function startup(c,p,H){
+if(p==='dashboard')c.innerHTML=H('Startup Dashboard','Track opportunities and your submissions.')+stats([['Open Challenges','24'],['My Applications','12'],['Shortlisted','3'],['Upcoming Deadlines','7']])+`<div class="panel"><h3>Application Progress</h3><div class="timeline"><div class="step"><b>Smart Logistics Challenge</b><span class="tag green">Shortlisted</span></div><div class="step"><b>Food Quality Detection</b><span class="tag">Under Review</span></div><div class="step"><b>National AI Challenge</b><span class="tag amber">Submission Pending</span></div></div></div>`;
+if(p==='discover')c.innerHTML=H('Discover Challenges','Find organization-posted problems relevant to your startup.')+`<div class="grid">${challenge('Food Quality Detection','AI & ML','18 Oct 2026','Rapid food-quality screening technology.')} ${challenge('Smart Logistics','Transport','27 Oct 2026','Reduce empty return trips through intelligent matching.')} ${challenge('Rural Energy Access','Energy','05 Nov 2026','Reliable rural energy management solutions.')}</div>`;
+if(p==='applications')c.innerHTML=H('My Applications','Your submitted challenge applications.')+table(['Challenge','Organization','Submitted','Status'],[['Food Quality Detection','Food Safety Lab','12 Sep','Under Review'],['Smart Logistics','National Logistics Cell','08 Sep','Shortlisted'],['Digital Public Services','Civic Innovation Org','02 Sep','Submitted']]);
+if(p==='deadlines')c.innerHTML=H('Startup Deadlines','Submission dates and pending actions.')+`<div class="grid">${deadline('National AI Challenge','12 Oct 2026','Submission Pending')} ${deadline('Food Quality Detection','18 Oct 2026','22 days left')} ${deadline('Smart Logistics','27 Oct 2026','31 days left')}</div>`;
+if(p==='history')c.innerHTML=H('Funding & Innovation History','Track past innovation submissions and explore funding opportunities.')+`<div class="panel"><h3>Innovation History</h3></div>`+table(['Innovation','Domain','Submitted','Status'],[['Smart Cold-Chain Sensor','AI & ML','20 Aug','Selected'],['Route Optimizer','Transport','02 Jul','Under Review'],['Solar Micro-Grid Kit','Energy','14 Jun','Submitted']])+`<div class="panel form"><h3>Submit New Innovation</h3><label>Innovation title</label><input placeholder="Your innovation"><label>Problem solved</label><textarea placeholder="Describe the problem and solution"></textarea><label>Domain</label><select><option>AI & ML</option><option>Food Technology</option><option>Transport</option><option>Healthcare</option></select><button class="btn primary" style="margin-top:18px" onclick="toast('Innovation submitted')">Submit</button></div><div class="panel"><h3>Funding Opportunities</h3><div class="grid">${fund('Prototype Grant','Up to ₹5 Lakh')} ${fund('Student Innovation Fund','Up to ₹2 Lakh')} ${fund('Startup Seed Support','Eligibility-based')}</div></div>`;
+if(p==='profile')c.innerHTML=H('Startup Profile','Complete your profile so organizations can understand your capabilities.')+formProfile('Startup');
+}
+function org(c,p,H){
+if(p==='dashboard')c.innerHTML=H('Organization Dashboard','Manage challenges and evaluate startup solutions.')+stats([['Active Challenges','8'],['Applications Received','146'],['Under Review','32'],['Selected Startups','11']])+`<div class="panel"><h3>Challenge Pipeline</h3>${bar('Draft','2')} ${bar('Published','4')} ${bar('Evaluation','2')} ${bar('Completed','7')}</div>`;
+if(p==='create')c.innerHTML=H('Create Challenge','Define a real-world problem and publish it for startups.')+`<div class="panel form"><h3>Challenge Details</h3><label>Challenge title</label><input placeholder="e.g. AI-based Food Quality Detection"><label>Problem statement</label><textarea placeholder="Describe the real-world problem"></textarea><label>Required solution / eligibility</label><textarea placeholder="Skills, technologies or requirements"></textarea><label>Category</label><select><option>AI & ML</option><option>Transport</option><option>Healthcare</option><option>Agriculture</option><option>Environment</option></select><label>Submission deadline</label><input type="date"><button class="btn primary" style="margin-top:18px" onclick="toast('Challenge saved as draft')">Save Draft</button> <button class="btn primary" style="margin-top:18px" onclick="toast('Challenge submitted for publication')">Publish Challenge</button></div>`;
+if(p==='challenges')c.innerHTML=H('My Challenges','Challenges created by your organization.')+table(['Challenge','Applications','Deadline','Status','Action'],[['Food Quality Detection','42','18 Oct','Published','Open'],['Smart Logistics','31','27 Oct','Evaluation','Review'],['Rural Energy Access','18','05 Nov','Draft','Edit']]);
+if(p==='applications')c.innerHTML=H('Applications Received','Startups that applied to your published challenges.')+table(['Startup','Challenge','Submitted','Status','Action'],[['TechVision AI','Food Quality Detection','12 Sep','Under Review','View'],['LogiNext','Smart Logistics','10 Sep','Shortlisted','View'],['FreshTech','Food Quality Detection','09 Sep','New','Review']]);
+if(p==='evaluation')c.innerHTML=H('Evaluation & Shortlist','Review submissions against your challenge requirements.')+`<div class="panel">${['TechVision AI','FreshTech','DataForge Labs'].map((x,i)=>`<div style="padding:17px 0;border-bottom:1px solid #edf0f5"><b>${x}</b><span class="tag" style="margin-left:10px">Application #${104+i}</span><p class="muted">Solution matches the published challenge requirements.</p><button class="btn outline" onclick="toast('Application opened')">View Submission</button> <button class="btn primary" onclick="toast('Startup shortlisted')">Shortlist</button></div>`).join('')}</div>`;
+if(p==='selected')c.innerHTML=H('Selected Startups','Startups selected from completed evaluations.')+table(['Startup','Challenge','Selected On','Next Step'],[['LogiNext','Smart Logistics','15 Sep','Partnership discussion'],['TechVision AI','Food Quality Detection','18 Sep','Prototype review']]);
+if(p==='profile')c.innerHTML=H('Organization Profile','Organization information and verification status.')+`<div class="notice">Verification status: <b style="color:#159669">Verified</b></div>`+formProfile('Organization');
+}
+function stats(a){return '<div class="stats">'+a.map(x=>`<div class="stat"><small>${x[0]}</small><b>${x[1]}</b></div>`).join('')+'</div>'}
+function challenge(a,b,c,d){return `<div class="card"><span class="tag">${b}</span><h3>${a}</h3><p>${d}</p><b>Deadline: ${c}</b><br><button class="btn primary" style="margin-top:15px" onclick="toast('Challenge details opened')">View & Apply</button></div>`}
+function deadline(a,b,c){return `<div class="card"><span class="tag amber">${c}</span><h3>${a}</h3><p class="muted">Submission deadline</p><b>${b}</b><br><button class="btn outline" style="margin-top:15px" onclick="toast('Deadline added to tracker')">Track</button></div>`}
+function fund(a,b){return `<div class="card"><span class="tag green">Open</span><h3>${a}</h3><p class="muted">Funding opportunity for innovation and startup development.</p><b>${b}</b><br><button class="btn outline" style="margin-top:15px" onclick="toast('Funding details opened')">View Details</button></div>`}
+function bar(a,b){return `<p><b>${a}</b><span class="tag" style="float:right">${b}</span></p>`}
+function table(head,rows){return `<div class="panel" style="overflow:auto"><table class="table"><tr>${head.map(x=>`<th>${x}</th>`).join('')}</tr>${rows.map(r=>`<tr>${r.map((x,i)=>`<td>${i===r.length-1&&['Action','Next Step'].includes(head[i])?`<button class="btn outline" onclick="toast('Action opened')">${x}</button>`:i===r.length-1&&head[i]==='Status'?`<span class="tag ${x==='Approved'||x==='Selected'||x==='Shortlisted'?'green':x==='Pending'||x==='Under Review'?'amber':''}">${x}</span>`:x}</td>`).join('')}</tr>`).join('')}</table></div>`}
+function formProfile(t){return `<div class="panel form"><label>${t} Name</label><input placeholder="Enter name"><label>Website</label><input placeholder="https://"><label>Industry / Domain</label><input placeholder="AI, Food Technology, Transport..."><label>Description</label><textarea placeholder="Describe your organization"></textarea><button class="btn primary" style="margin-top:18px" onclick="toast('Profile saved')">Save Profile</button></div>`}
+function toast(t){let x=document.getElementById('toast');x.textContent=t;x.style.display='block';setTimeout(()=>x.style.display='none',2200)}
+</script>
+</body>
+</html>
